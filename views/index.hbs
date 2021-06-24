@@ -1,0 +1,284 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tea Leaf Diseases Detection </title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div class="loader">
+    <div></div>
+  </div>
+  <div class="content">
+    <!--1st page-->
+    <section id="main">
+
+      <header>
+        <div id="nav">
+          <div class="row">
+            <a href="#" class="logo"> </a>
+            <ul class="menu">
+              <li><a href="/" class="home"> Home </a></li>
+              <li><a href="#disease-name"> Image sections</a></li>
+              <li><a href="#about"> About </a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="im">
+
+        </div>
+
+
+
+
+        <div class="font">
+          <h1>
+            Tea Leaf Diseases Detection
+          </h1>
+          <p class="wel"> Welcome TO Webpage <br>
+
+          <p class="p">In here you can solve your leaf diseases problem immediately<br><br>
+            <span>1.With Correct result and acording to the diseases you got some solution.</span><br>
+            <span>2.Our services is faster than others.</span> <br>
+            <span>3.If any problem faced than contact us...!!!</span> <br>
+          </p> </br>
+          </p>
+          <br>
+
+
+          <div class="lds-circle">
+            <a href="result" class="iamge-btn" id="button">
+              <h4>Start Prediction </h4>
+            </a>
+          </div>
+
+        </div>
+
+      </header>
+    </section>
+
+
+
+    <!-- 2nd page-->
+    <section id="about">
+      <div class="about-txt">
+        <h2>About Us</h2>
+        <p>
+          Tea plays an important role in the field of Human life. One of the popular beverages across the world
+          is tea, and the world's second largest producer of tea is India. Proper nurturing is required for healthy
+          growth of tea plants. <span> plant diseases are a threat in the production of tea and identifying the disease
+            remains difficult. Insects, mites, fungi, bacteria and algae are the most common causes of tea plant
+            diseases.</span>
+          <span>
+            Since there are so many acres of tea land, identifying diseases in a short period of time would be
+            difficult. </span> <span>As we all know, farmers in the field judge and diagnose tea leaf. Experts are often
+            called in
+            to study the tea leaves, which is a time-consuming and expensive operation.</span>
+          So, we came with an idea to provide an image-based automatic inspection interface. The proposed
+          solution uses a Deep learning CNN algorithm. Our proposed solution would classify three types of
+          diseased leaves, Red spider mite Helopeltis and Red rust. It's very important to remove the diseased
+          leaves because it can be further spread to healthy leaves causing reduction in tea production.
+        </p>
+      </div>
+    </section>
+
+
+
+
+    <section id="disease-name">
+
+      <div class="wrapper">
+        <div class="card">
+
+          <img src="" class="one">
+          <div class="info">
+            <h1>Read rust</h1>
+            <p>
+              Alga causes red rust, which appears as orange-yellow irregular spots on the leaf's upper surface.
+              Patches can be small or large, clustered or scattered, and can cover a large area of the vine. Wind or
+              water splashing back up into the leaves spreads the disease. 4-8 hours of low light intensity, warm
+              temperatures, and moisture humidity, such as dew or fog, are favourable to rust diseases, accompanied
+              by 8-16 hours of high light intensity, high temperatures, and slow drying of leaf surfaces.
+            </p>
+          </div>
+        </div>
+
+
+
+
+        <div class="card">
+
+          <img src="" class="two">
+          <div class="info">
+            <h1>Red spider mite</h1>
+            <p>
+              Alga causes red rust, which appears as orange-yellow irregular spots on the leaf's upper surface.
+              Patches can be small or large, clustered or scattered, and can cover a large area of the vine. Wind or
+              water splashing back up into the leaves spreads the disease. 4-8 hours of low light intensity, warm
+              temperatures, and moisture humidity, such as dew or fog, are favourable to rust diseases, accompanied
+              by 8-16 hours of high light intensity, high temperatures, and slow drying of leaf surfaces.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <img src="" class="three">
+          <div class="info">
+            <h1>Red rust </h1>
+            <p>
+              Alga causes red rust, which appears as orange-yellow irregular spots on the leaf's upper surface.
+              Patches can be small or large, clustered or scattered, and can cover a large area of the vine. Wind or
+              water splashing back up into the leaves spreads the disease. 4-8 hours of low light intensity, warm
+              temperatures, and moisture humidity,
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="footer">
+      <img src="" class="footer-img">
+      <div class="last">
+        <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+          <a href="#">SCS 10sem student</a>.
+        </p>
+      </div>
+    </section>
+
+
+  </div>
+
+
+  <!-- 
+
+  <div>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="Login-popup">
+      <div class="upload-main">
+        <img src="../public/css/images/55049-200.png" class="close">
+        <input type="file" name="img_upload" id="filetag" required accept="image/jpeg ,image/png , image/jpg">
+        <img src="result" id="preview">
+        <button type="submit" class="search-btn" id="button" value="upld">Submit</button>
+
+      </div>
+    </form>
+
+  </div>
+   -->
+
+  <script>
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+
+      // 20 is an arbitrary number here, just to make you think if you need the prevScrollpos variable:
+      if (currentScrollPos > 20) {
+        // I am using 'display' instead of 'top':
+        document.getElementById("nav").style.display = "none";
+      } else {
+        document.getElementById("nav").style.display = "flex";
+      }
+    }
+  </script>
+
+
+
+  <script>
+    $(window).on('load', function () {
+      $(".loader").fadeOut(1000);
+      $(".content").fadeIn(1000);
+    });
+  </script>
+
+
+
+
+
+
+
+  <!--
+  <script>
+    /*popup script*/
+
+    document.getElementById("button").addEventListener("click", function () {
+      document.querySelector(".Login-popup").style.display = "flex";
+      document.querySelector("#main").style.opacity = "0.2";
+      document.querySelector("#about").style.display = "none";
+      document.querySelector("#disease-name").style.display = "none";
+      document.querySelector("#footer").style.opacity = "0.2";
+
+
+    })
+
+
+    document.querySelector(".close").addEventListener("click", function () {
+      document.querySelector(".Login-popup").style.display = "none";
+      document.querySelector("#main").style.opacity = "1";
+      document.querySelector("#about").style.display = "flex";
+      document.querySelector("#disease-name").style.display = "flex";
+      document.querySelector("#footer").style.opacity = "1";
+
+    })
+
+  </script>
+
+
+  <!-- popup script 
+  <script>
+   
+
+
+    document.getElementById("filetag").addEventListener("click", function () {
+
+      document.querySelector("#preview").style.display = "flex";
+
+    })
+
+    var fileTag = document.getElementById("filetag"),
+      preview = document.getElementById("preview");
+
+    fileTag.addEventListener("change", function () {
+      changeImage(this);
+    });
+
+    function changeImage(input) {
+      var reader;
+
+      if (input.files && input.files[0]) {
+        reader = new FileReader();
+
+        reader.onload = function (e) {
+          preview.setAttribute('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+
+
+    // Graph section flex//
+    document.getElementById("btn").addEventListener("click", function () {
+      document.querySelector("#graph").style.display = "flex";
+    })
+
+  // document.getElementById("button").addEventListener("click", function () {
+
+    //    document.querySelector(".grph-btn").style.display = "flex";
+
+      //})
+  </script>
+
+   -->
+
+</body>
+
+
+
+</html>

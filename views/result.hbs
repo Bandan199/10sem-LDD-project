@@ -1,0 +1,263 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tea Leaf Diseases Detection </title>
+  <link rel="stylesheet" href="css/result.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+  <div class="loader">
+    <div></div>
+  </div>
+  <div class="content">
+    <!--1st page-->
+    <section id="main">
+      <header>
+        <div id="nav">
+          <div class="row">
+            <a href="#" class="logo"> </a>
+            <ul class="menu">
+              <li><a href="/" class="home"> Home </a></li>
+              <li><a href="#image"> Image sections</a></li>
+              <li><a href="#about"> About </a></li>
+
+            </ul>
+          </div>
+
+          <div class="im">
+
+          </div>
+
+      </header>
+
+    </section>
+
+
+
+    <section id="mid">
+
+
+
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="upload-main">
+          <input type="file" name="img_upload" id="filetag" required accept="image/jpeg ,image/png , image/jpg">
+          <img src="" id="preview">
+          <button type="submit" class="search-btn" id="button" onclick="myFunction()" value="upld">Submit</button>
+
+        </div>
+      </form>
+
+
+
+
+      <div class="result">
+        <h2>Result {{result.image_name}}</h2>
+        <!-- <ul>
+        {{#each result.detection_scores}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>  -->
+
+        <img src="https://tealeavesspotdata.s3.amazonaws.com/{{result.image_name}}.jpg" id="preview1"
+          onkeyup="EnableDisable(this)">
+
+
+        <button class="grph-btn" id="btn"> <a href="#graph">
+            <h4>View Graph</h4>
+          </a></button>
+
+      </div>
+
+
+
+
+
+
+
+
+      <!---
+				<img src="images/r.gif" class="imag">
+
+				<a href="#graph" class="graph-btn" id="button">
+
+            <h4>View Graph </h4>
+                    </a>
+                -->
+
+    </section>
+
+
+
+
+
+    <section id="graph">
+
+      <div class="gm">
+        <ul>
+          {{#each result.detection_scores}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+
+      <!DOCTYPE HTML>
+      <html>
+
+      <head>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script type="text/javascript">
+
+          var LDD = [
+            { label: "apple", y: 10 },
+            { label: "orange", y: 15 },
+            { label: "banana", y: 25 },
+            { label: "mango", y: 30 },
+            { label: "grape", y: 28 }
+          ];
+
+          window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+              title: {
+                text: "My First Chart in CanvasJS"
+              },
+
+              data: [
+                {
+                  type: "column",
+                  dataPoints: LDD
+                }
+              ]
+            });
+            chart.render();
+          }
+        </script>
+      </head>
+
+      <body>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      </body>
+
+      </html>
+    </section>
+
+
+
+
+
+
+
+    <!-- footer -->
+    <section id="footer">
+      <img src="" class="footer-img">
+      <div class="last">
+        <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+          <a href="#">SCS 10sem student</a>.
+        </p>
+      </div>
+    </section>
+
+
+  </div>
+
+
+  <script>
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+
+      // 20 is an arbitrary number here, just to make you think if you need the prevScrollpos variable:
+      if (currentScrollPos > 20) {
+        // I am using 'display' instead of 'top':
+        document.getElementById("nav").style.display = "none";
+      } else {
+        document.getElementById("nav").style.display = "flex";
+      }
+    }
+  </script>
+
+  <script>
+
+
+
+    document.getElementById("filetag").addEventListener("click", function () {
+
+      document.querySelector("#preview").style.display = "flex";
+
+    })
+
+    var fileTag = document.getElementById("filetag"),
+      preview = document.getElementById("preview");
+
+    fileTag.addEventListener("change", function () {
+      changeImage(this);
+    });
+
+    function changeImage(input) {
+      var reader;
+
+      if (input.files && input.files[0]) {
+        reader = new FileReader();
+
+        reader.onload = function (e) {
+          preview.setAttribute('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+
+    // Graph section flex//
+    document.getElementById("btn").addEventListener("click", function () {
+      document.querySelector("#graph").style.display = "flex";
+    })
+
+  // document.getElementById("button").addEventListener("click", function () {
+
+    //    document.querySelector(".grph-btn").style.display = "flex";
+
+      //})
+  </script>
+
+
+
+  <script>
+    function myFunction() {
+      document.getElementById('button').style.display = 'none'; //first hide the button
+      setTimeout(function () { //using setTimeout function
+        document.getElementById('button').style.display = 'flex'; //displaying the button again after 3000ms or 3 seconds
+      }
+        , 30000);
+    }
+  </script>
+
+
+  <script>
+    $(window).on('load', function () {
+      $(".loader").fadeOut(1000);
+      $(".content").fadeIn(1000);
+    });
+  </script>
+
+
+
+  <script>
+    var btnSubmit = document.getElementById("btn");
+
+    if (preview1.value.() != "") {
+
+      btn.disabled = false;
+    } else {
+
+      btn.disabled = true;
+    }
+    };
+  </script>
+
+</body>
+
+</html>
